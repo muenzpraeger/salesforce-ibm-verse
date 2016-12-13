@@ -1,0 +1,15 @@
+<div class="container">
+  <div id="oauth" style="padding: 8px">
+    You are currently not logged in into Salesforce. Please click the button below.<br /><br />
+    <button class="slds-button--neutral" onclick="forceLogin()">
+      Login to Salesforce
+    </button>
+  </div>
+  <div id="component"/>
+</div>
+<script>
+	var config = {
+		appId: "<%= consumerKey %>",
+		lightningApp: "<%= lightningApp %>",
+		lightningComponent: "<%= lightningComponent %>"
+	};

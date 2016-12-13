@@ -1,0 +1,56 @@
+<aura:component implements="force:appHostable" controller="IBMVerseController">
+    
+    <aura:attribute name="accountSelected" type="Account" />
+    <aura:attribute name="accounts" type="Account[]" />
+    <aura:attribute name="verseObject" type="Object" />
+    
+    <div aura:id="lookupForm" 
+         class="slds-form-element slds-lookup" 
+         data-select="single">
+        
+        <lightning:input name="mailSubject"
+                         label="Mail Subject"
+                         value="{!v.verseObject.verseApiData.context.subject}"
+                         disabled="true" />
+        
+        <br />
+        
+        <lightning:input aura:id="inputSearch"
+                         name="inputSearch"
+                         label="Account Search"
+                         placeholder="Enter the Account name here"
+                         minlength="3"
+                         messageWhenBadInput="Your entry must be at least 3 characters."
+                         onchange="{!c.onSearchKeyChange}" />
+        
+        <div class="slds-lookup__menu">
+            <ul class="slds-lookup__list" role="listbox">
+                <aura:iteration items="{!v.accounts}"
+                                var="account"
+                                indexVar="accountIndex">
+                    <li role="presentation">
+                        <span class="slds-lookup__item-action slds-media slds-media--left" role="option">
+                            <lightning:icon iconName="standard:account"
+                                            size="small"
+                                            class="slds-icon slds-icon-standard-account slds-icon--small slds-media__figure"/>
+                            <div class="slds-media__body">
+                                <div class="slds-lookup__result-text"
+                                     onclick="{!c.onAccountSelected}" 
+                                     id="{!accountIndex}">{!account.Name}</div>
+                            </div>
+                        </span>
+                    </li>
+                </aura:iteration>
+            </ul>
+        </div>
+        
+        <br /><br />
+        
+        <lightning:button aura:id="btnLog" 
+                          label="Log Mail" 
+                          onclick="{!c.onLogMail}" 
+                          disabled="true" />
+        
+    </div>
+    
+</aura:component>

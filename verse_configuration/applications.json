@@ -1,0 +1,31 @@
+[
+  {
+    "app_id": "com.winkelmeyer.salesforce",
+    "name": "Salesforce Verse integration",
+    "url": "https://salesforce-ibm-verse.herokuapp.com/verse",
+
+    "extensions": [
+      {
+        "type": "com.ibm.verse.action",
+        "ext_id": "com.winkelmeyer.salesforce.logMail",
+        "name": "Log to Salesforce",
+        "payload": {},
+        "path": "mail.read",
+        "title": "Log to Salesforce"
+      }
+    ],
+
+    "payload": {
+      "features": [
+        "core"
+      ],
+      "renderParams": {
+        "width": "900",
+        "height": "500"
+      }
+    },
+    "services": [
+      "Verse"
+    ]
+  }
+]

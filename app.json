@@ -1,0 +1,17 @@
+{
+	"name": "Salesforce and IBM Verse",
+	"description": "Node",
+	"keywords": [
+		"ibm verse",
+		"salesforce",
+		"node"
+	],
+	"website": "https://github.com/muenzpraeger/salesforce-ibm-verse",
+	"repository": "https://github.com/muenzpraeger/salesforce-ibm-verse",
+	"success_url": "/",
+	"env": {
+		"FORCE_OAUTH_CONSUMER_KEY":     { "description": "Consumer Key of the Connected App in Force.com" },
+		"FORCE_OAUTH_CONSUMER_SECRET":  { "description": "Consumer Secret of the Connected App in Force.com" },
+		"VERSE_SOURCE_SERVER":  { "description": "URL of the Verse server for cross-site-scripting checks" }
+  }
+}

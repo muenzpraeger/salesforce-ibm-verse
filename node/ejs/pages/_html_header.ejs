@@ -1,0 +1,25 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title><%= title %></title>
+		<link rel="stylesheet" type="text/css" href="/assets/styles/salesforce-lightning-design-system.css" />
+		    <script>
+        window.addEventListener("message", function(event) {
+
+        if (event.origin !== "<%= verseSourceServer %>"){  // 
+          return;
+        }
+
+        _verseObject = event.data;
+
+        if (_verseObject.verseApiType === "com.ibm.verse.ping.application.loaded") {
+          var loaded_message = {
+            verseApiType : "com.ibm.verse.application.loaded"
+          };
+
+          event.source.postMessage(loaded_message, event.origin);
+        }
+      }, false);
+    </script>
+	</head>
+	<body>
