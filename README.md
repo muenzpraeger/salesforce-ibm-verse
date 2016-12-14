@@ -40,6 +40,10 @@ The project consists out of three components:
 
 * The node.js app (using EJS)
 * The Verse Extension configuration
+* A Lightning Out app with Apex backend classes
+
+For your convenience you can install them via [this unmanaged package](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t0Y000000IswW) into your Salesforce organization.
+
 
 ## Automatic deployment to Heroku
 
