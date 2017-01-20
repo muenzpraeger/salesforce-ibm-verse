@@ -6,7 +6,7 @@
 		    <script>
         window.addEventListener("message", function(event) {
 
-        if (event.origin !== "<%= verseSourceServer %>"){  // 
+        if (!"<%= verseSourceServer %>".includes(event.origin)){  // 
           return;
         }
 
